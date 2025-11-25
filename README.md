@@ -506,10 +506,10 @@ CMD ["npm", "run", "start:prod"]
 
 ### Performance Considerations
 
-1. **Lightweight PDF Generation**: html-pdf-node uses minimal resources
+1. **Efficient PDF Generation**: Puppeteer browser is initialized once and reused across requests
 2. **Template Caching**: All templates pre-loaded at startup
 3. **Streaming**: Large documents streamed to avoid memory spikes
-4. **Graceful Shutdown**: Proper cleanup on SIGTERM
+4. **Graceful Shutdown**: Proper cleanup of the Nest app and Puppeteer browser on SIGTERM
 
 ### Monitoring
 
@@ -544,24 +544,3 @@ npm run start:dev
 # Run in production
 npm run start:prod
 ```
-
----
-
-## 📄 License
-
-UNLICENSED - Private project
-
----
-
-## 👤 Author
-
-Senior Nest.js Developer Technical Assessment
-
----
-
-## 🙏 Acknowledgments
-
-- [Nest.js](https://nestjs.com/) - Progressive Node.js framework
-- [html-pdf-node](https://github.com/mrafiqk/html-pdf-node) - Efficient HTML to PDF conversion
-- [Handlebars](https://handlebarsjs.com/) - Template engine
-- [class-validator](https://github.com/typestack/class-validator) - Validation library
