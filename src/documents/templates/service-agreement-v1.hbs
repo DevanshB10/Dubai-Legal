@@ -1,18 +1,48 @@
-<h1>Service Agreement (v1)</h1>
+<h1>Service Agreement (UAE) – v1</h1>
+
 <p>
-  This Service Agreement ("Agreement") is made between
-  <strong>{{client.name}}</strong>, located at
-  <strong
-    >{{client.address.street}}, {{client.address.city}},
-    {{client.address.country}}</strong
-  >
-  ("Client") and
-  <strong>{{provider.name}}</strong> ("Provider").
+  This Service Agreement (the "<strong>Agreement</strong>") is entered into between
+  <strong>{{client.name}}</strong>, having its address at
+  <strong>{{client.address.street}}, {{client.address.city}}, {{client.address.country}}</strong>
+  (the "<strong>Client</strong>") and
+  <strong>{{provider.name}}</strong> (the "<strong>Service Provider</strong>").
+</p>
+
+<h2>1. Scope of Services</h2>
+<p>
+  The Service Provider shall provide professional services to the Client as mutually
+  agreed in writing from time to time (the "<strong>Services</strong>"). The Services
+  will commence on <strong>{{effectiveDate}}</strong>.
+</p>
+
+<h2>2. Fees and Payment</h2>
+<p>
+  The Client shall pay the Service Provider a fee of
+  <strong>{{billing.rate}} {{billing.currency}}</strong> per
+  <strong>{{billing.unit}}</strong> for the Services performed.
+</p>
+<p>
+  Unless otherwise agreed in writing, invoices are due upon receipt and payable in
+  immediately available funds to the account designated by the Service Provider.
+  All amounts are exclusive of any applicable taxes (including UAE VAT, where
+  applicable), which shall be borne by the Client.
+</p>
+
+<h2>3. Term and Termination</h2>
+<p>
+  This Agreement shall remain in force from the Effective Date until the Services
+  are completed, unless terminated earlier by either party in accordance with the
+  terms agreed between the parties.
+</p>
+
+<h2>4. Governing Law and Jurisdiction</h2>
+<p>
+  This Agreement shall be governed by and construed in accordance with the laws of
+  <strong>{{legal.governingLaw}}</strong> and, where applicable, the federal laws of
+  the United Arab Emirates, without regard to conflict of law principles.
 </p>
 
 <p>
-  Services will commence on {{effectiveDate}} and will be billed at a rate of
-  {{billing.rate}} {{billing.currency}} per {{billing.unit}}.
+  Each party acknowledges that it has read and understood this Agreement and agrees
+  to be bound by its terms.
 </p>
-
-<p>Governing law: {{legal.governingLaw}}.</p>

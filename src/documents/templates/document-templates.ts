@@ -52,6 +52,13 @@ export const DOCUMENT_TEMPLATES: TemplateDefinition[] = [
         fileName: 'nda-v1.hbs',
         defaultOutputFileName: 'nda-v1',
       },
+      {
+        id: 'nda',
+        version: 'v2',
+        description: 'Mutual NDA (extended, v2)',
+        fileName: 'nda-v2.hbs',
+        defaultOutputFileName: 'nda-v2',
+      },
     ],
   },
 ];

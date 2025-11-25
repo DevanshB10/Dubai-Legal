@@ -186,34 +186,67 @@ Generate a legal document from a template.
 - Content-Disposition: `attachment; filename="<template>.<ext>"`
 - Body: Document file (streamed or buffered)
 
-**Example cURL:**
+**Example cURL (ready-to-run):**
 
 ```bash
-# Generate HTML (streaming)
+# Generate Service Agreement HTML (streaming)
 curl -X POST http://localhost:3000/documents/generate \
   -H "Content-Type: application/json" \
-  -o output.html \
+  -o service-agreement.html \
   -d '{
     "templateId": "service-agreement",
     "data": {
-      "client": {"name": "Acme Corp"},
-      "provider": {"name": "Provider Ltd"},
+      "client": {
+        "name": "Acme Corp",
+        "address": {
+          "street": "123 Main St",
+          "city": "Metropolis",
+          "state": "NY",
+          "postalCode": "10001",
+          "country": "US"
+        }
+      },
+      "provider": {
+        "name": "Provider Ltd",
+        "entityType": "LLC"
+      },
+      "services": {
+        "description": "Software development and maintenance services"
+      },
+      "billing": {
+        "rate": 100,
+        "currency": "USD",
+        "unit": "hour",
+        "paymentTerms": 30
+      },
+      "legal": {
+        "governingLaw": "Delaware",
+        "disputeResolution": "Binding arbitration"
+      },
       "effectiveDate": "2025-01-01"
     }
   }'
 
-# Generate PDF (non-streaming for testing)
+# Generate NDA PDF (non-streaming for testing)
 curl -X POST "http://localhost:3000/documents/generate?stream=false" \
   -H "Content-Type: application/json" \
-  -o output.pdf \
+  -o nda.pdf \
   -d '{
     "templateId": "nda",
     "format": "pdf",
     "data": {
-      "partyA": {"name": "Alpha Inc"},
-      "partyB": {"name": "Beta LLC"},
+      "partyA": {
+        "name": "Alpha Inc",
+        "address": { "city": "Gotham", "country": "US" }
+      },
+      "partyB": {
+        "name": "Beta LLC",
+        "address": { "city": "Star City", "country": "US" }
+      },
       "purpose": "partnership discussion",
-      "effectiveDate": "2025-01-01"
+      "effectiveDate": "2025-01-01",
+      "term": { "years": 3 },
+      "legal": { "governingLaw": "California" }
     }
   }'
 ```
